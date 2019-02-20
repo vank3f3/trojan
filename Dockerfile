@@ -11,7 +11,7 @@ ENV KEY_PATH=
 WORKDIR /app
 RUN apk add --no-cache --virtual build-dependencies cmake g++ make boost-dev && \
     apk add --no-cache mariadb-dev && \
-    wget https://github.com/trojan-gfw/trojan/archive/v${version}.tar.gz && \
+    wget --no-check-certificate https://github.com/trojan-gfw/trojan/archive/v${version}.tar.gz && \
     tar zxf v${version}.tar.gz && \
     cd trojan-${version} && \
     sed -i '1iSET(Boost_USE_STATIC_LIBS ON)' CMakeLists.txt && \
